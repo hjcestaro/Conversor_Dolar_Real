@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converter - BR -> EUA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <div class="app-conversor">
+            <h1>Planeje sua viagem!</h1>
+            <p>Converter o valor em Dólar para Real </p>
+            <form class="form"> Valor a ser convertido:
+                <input type="text" class="valor-conv" placeholder="Insira valor que será convertido em Dolar">
+                <input type="submit" value="Converter" class="btn-conv">
+            </form>
+            <div class="valorConvertido"></div>
+        </div>
+    </main>
+</body>
+
+<script>
+
+    const form = document.querySelector('.form')
+    const valor = document.querySelector('.valor-conv')
+    const inserirValor = document.querySelector('.valorConvertido')
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault()
+        const valorInserido = parseInt(valor.value) * 5.51
+        
+        inserirValor.innerHTML = `<h2>R$ ${valorInserido.toFixed(2)}</h2>`
+    })
+
+
+</script>
+
+</html>
